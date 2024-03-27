@@ -290,7 +290,7 @@ Capacitor          | C81       | 1.5 nF, MLCC, 5 mm Pitch                    | 1
 Capacitor          | C82 - C84 | 330 pF, MLCC, 5 mm Pitch                    | 3        | Mouser [810-FG28C0G1H331JNT0](https://www.mouser.com/ProductDetail/810-FG28C0G1H331JNT0)
 Capacitor          | C85       | 47 pF, MLCC, 5 mm Pitch                     | 1        | Mouser [810-FG28C0G1H470JNT0](https://www.mouser.com/ProductDetail/810-FG28C0G1H470JNT0)
 Capacitor          | C86, C87  | 33 pF, MLCC, 5 mm Pitch                     | 2        | Mouser [810-FG28C0G1H330JNT0](https://www.mouser.com/ProductDetail/810-FG28C0G1H330JNT0)
-Capacitor          | C88 - C90 | 30 pF, Trim Capactiors, 5 mm Pitch          | 3        | Mouser [659-GKG30015](https://www.mouser.com/ProductDetail/659-GKG30015). Note: Can be replaced with Mouser [810-FG28C0G2A270JNT0](https://www.mouser.com/ProductDetail/810-FG28C0G2A270JNT0) if color subcarrier frequency tunning is not required.
+Capacitor          | C88 - C90 | 30 pF, Trim Capactiors, 5 mm Pitch          | 3        | Mouser [659-GKG30015](https://www.mouser.com/ProductDetail/659-GKG30015). Note: Can be replaced with Mouser [810-FG28C0G2A270JNT0](https://www.mouser.com/ProductDetail/810-FG28C0G2A270JNT0) if color subcarrier frequency tunning is not required. DigiKey [2447-GKG30015-ND](https://www.digikey.com/en/products/detail/ew-electronics/GKG30015/11689271) (Mouser doesn't stock them anymore).
 Capacitor          | C91       | 27 pF, MLCC, 5 mm Pitch                     | 1        | Mouser [810-FG28C0G2A270JNT0](https://www.mouser.com/ProductDetail/810-FG28C0G2A270JNT0). Note C91 should be 18 pF for PAL support.
 Capacitor          | C92, C93  | 22 pF, MLCC, 5 mm Pitch                     | 2        | Mouser [810-FG28C0G1H220JNT0](https://www.mouser.com/ProductDetail/810-FG28C0G1H220JNT0)
 Capacitor          | C94       | 4.7 pF, MLCC, 5 mm Pitch                    | 1        | Mouser [810-FG28C0G1H4R7CNT0](https://www.mouser.com/ProductDetail/810-FG28C0G1H4R7CNT0)
@@ -344,9 +344,11 @@ Battery Holder     | BT1       | CR2032 Battery holder                       | 1
 Battery            | BT1       | CR2032 Battery                              | 1        | Mouser [614-CR2032-200](https://www.mouser.com/ProductDetail/614-CR2032-200), [658-CR2032](https://www.mouser.com/ProductDetail/658-CR2032). Note: Not included in Mouser Project due to shipping restrictions.
 IC Socket          | U1, U2, U4 | 40 pin DIP                                 | 3        | Mouser [517-4840-6000-CP](https://www.mouser.com/ProductDetail/517-4840-6000-CP)
 IC Socket          | U3        | 64 pin DIP                                  | 1        | eBay
-IC Socket          | U3        | 64 pin DIP (pin strips, alternate)          | 4        | Digikey [317-87-121-41-005101] (https://www.digikey.com/product-detail/en/preci-dip/317-87-121-41-005101/1212-1133-ND/3757383)
+IC Socket          | U3        | 64 pin DIP (alternate)                      | 1        | DigiKey [117-87-764-41-005101](https://www.digikey.com/en/products/detail/preci-dip/117-87-764-41-005101/3757318)
+IC Socket          | U3        | 64 pin DIP (pin strips, alternate)          | 4        | DigiKey [317-87-121-41-005101](https://www.digikey.com/en/products/detail/preci-dip/317-87-121-41-005101/3757383)
 IC Socket          | U6, U7    | 32 pin DIP                                  | 2        | Mouser [517-4832-6000-CP](https://www.mouser.com/ProductDetail/517-4832-6000-CP)
 IC Socket          | U47       | 24 pin DIP, 400 mil spacing                 | 1        | Mouser [517-4824-6000-CP](https://www.mouser.com/ProductDetail/517-4824-6000-CP) or [517-4824-3000-CP](https://www.mouser.com/ProductDetail/517-4824-3000-CP). Note: Cut the socket in the middle. If using a socket with 600 mil spacing, remove excess material. Alternatively, solder U47 (CXA1645P) without using a socket.
+IC Socket          | U47       | 24 pin DIP, 400 mil spacing (alternate)     | 1        | DigiKey [110-93-424-41-001000](https://www.digikey.com/en/products/detail/mill-max-manufacturing-corp/110-93-424-41-001000/81797)
 IC Socket          | U12 - U14, U19 - U26 | 20 pin DIP                       | 11       | Mouser [517-4820-3000-CP](https://www.mouser.com/ProductDetail/517-4820-3000-CP)
 IC Socket          | U5, U8 - U11 | 18 pin DIP                               | 5        | Mouser [517-4818-3000-CP](https://www.mouser.com/ProductDetail/517-4818-3000-CP)
 IC Socket          | U15 - U18, U27 - U32, U46 | 16 pin DIP                  | 11       | Mouser [517-4816-3000-CP](https://www.mouser.com/ProductDetail/517-4816-3000-CP)
@@ -357,15 +359,22 @@ IC Socket          | U48, U49  | 8 pin DIP                                   | 2
 
 #### NTSC Video Standard Support
 The Omega Main Board can be configured to support either NTSC (60 Hz) or PAL (50 Hz) video standard. To support NTSC standard the board should be configured as follows:
-* Do not install the following components (they are required for PAL support only):
-  * Crystal Oscillator: Y3
-  * Capacitors: C43, C90, C93
-  * Resistors: R1, R30; Integrated Circuit: U43
-  * Note: C43 and U43 also used for V9938 VDP CSYNC level converer. They must be installed if V9938 VDP is used
 * Install a wire links JP5 and JP6 in 1-2 position for NTSC standard support
+* **Do not install** the following components, they are required for PAL support only:
+  * Crystal Oscillator: Y3
+  * Capacitors: C90, C93
+  * Resistors: R1, R30
+* If using V9958 VDP also **do not install** the following components:
+  * Capacitor: C43
+  * Integrated Circuit: U43
+* If using V9938 VDP **do install** the following components, they are used for V9938 VDP CSYNC level converter:
+  * Capacitor: C43
+  * Integrated Circuit: U43
+  * Install a wire link instead of C93 to avoid floating inputs on U43
 
 #### PAL Video Standard Support
 To support PAL standard the board should be configured as follows:
+* Install a wire links JP5 and JP6 in 2-3 position for PAL standard support
 * Install the following components:
   * Crystal Oscillator: Y3
   * Capacitors: C43, C90, C93
@@ -374,10 +383,9 @@ To support PAL standard the board should be configured as follows:
 * Replace the following components:
   * R9 use 16 kohm resistor (instead of 20 kohm)
   * C91 use 18 pF capacitor (instead of 27 pF)
-* Install a wire links JP5 and JP6 in 2-3 position for PAL standard support
 
 #### V9958 VDP Support
-The Omega Main Baord can be configured to support either V9958 VDP (recommended) or V9938 VDP. To support V9958 VDP the board should be configured as follows:
+The Omega Main Board can be configured to support either V9958 VDP (recommended) or V9938 VDP. To support V9958 VDP the board should be configured as follows:
 * Do not install the following components:
   * Transistor: Q2
   * Capacitor: C43
@@ -392,7 +400,8 @@ To support V9938 VDP the board should be configured as follows:
   * Capacitor: C43
   * Integrated Circuit: U43
 * Install a wire links JP3 and JP4 in 1-2 position for V9938 VDP.
-* *Warning: Incorrect setting of JP3 will damage VDP*
+* If using NTSC video standard install a wire link instead of C93 to avoid floating inputs on U43
+* **Warning: Incorrect setting of JP3 will damage VDP**
   
 ### Input / Output Ports
 
